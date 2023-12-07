@@ -1,0 +1,12 @@
+.counter-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
