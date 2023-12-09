@@ -1,0 +1,12 @@
+.bg-natural-card {
+    background-color: rgba(230, 230, 230, 0.5); /* Cambia este color al color natural deseado */
+}
+
+.rounded-md {
+    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+}
+
+.rounded-md:hover img {
+    transform: scale(1.5); /* Puedes ajustar el valor según tus preferencias */
+    transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+}

@@ -10,3 +10,12 @@ body {
 
     font-family: "Work Sans", sans-serif;
 }
+
+body {
+    background-image: url("/img/fondoPantalla.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}

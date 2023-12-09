@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
-import { Input } from "@nextui-org/react";
-
+import { ToastContainer, Zoom, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./ItemCount.css";
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -18,22 +18,52 @@ const ItemCount = ({ stock, onAdd }) => {
             setContador(contador - 1);
         }
     };
-    const terminarCompra = () => {
-        if (stock > 0) {
-            onAdd && onAdd(contador);
-        }
+    const agregarCarrito = () => {
+        toast("Se agrego tu producto al carrito", {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: "foo-bar",
+            theme: "light",
+            Transition: Zoom,
+        });
+        [contador];
     };
     return (
         <>
-            <div className="counter-input">
-                <button onClick={sumar}>+</button>
-                <h2>{contador}</h2>
-                <button onClick={restar}>-</button>
-            </div>
-            <div>
-                <Button color="warning" onClick={terminarCompra}>
-                    Terminar compra
-                </Button>
+            <div className="font-sans flex flex-col items-center space-y-4 text-sm font-medium ">
+                <div className="button-container flex">
+                    <Button
+                        onClick={restar}
+                        className=" font-sans tamanio"
+                        color="warning"
+                        size="sm"
+                    >
+                        -
+                    </Button>
+
+                    <h2 className="text-sm font-semibold text-slate-900 mr-2 ml-2">{contador}</h2>
+
+                    <Button
+                        onClick={sumar}
+                        className=" font-sans tamanio"
+                        color="warning"
+                        size="sm"
+                    >
+                        +
+                    </Button>
+                </div>
+
+                <div className="flex flex-col items-center space-y-2">
+                    <Button
+                        className="text-tiny font-sans"
+                        color="warning"
+                        size="sm"
+                        onClick={agregarCarrito}
+                    >
+                        Agregar
+                    </Button>
+                    <ToastContainer />
+                    <Button color="warning">Terminar compra</Button>
+                </div>
             </div>
         </>
     );
