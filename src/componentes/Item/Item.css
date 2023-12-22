@@ -10,3 +10,8 @@
     transform: scale(1.5); /* Puedes ajustar el valor según tus preferencias */
     transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
 }
+
+.tamanio {
+    width: 10px !important;
+    height: 20px !important;
+}

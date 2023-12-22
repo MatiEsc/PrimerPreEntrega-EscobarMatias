@@ -18,6 +18,7 @@ const ItemCount = ({ stock, onAdd }) => {
             setContador(contador - 1);
         }
     };
+
     const agregarCarrito = () => {
         toast("Se agrego tu producto al carrito", {
             position: toast.POSITION.BOTTOM_LEFT,
@@ -25,8 +26,8 @@ const ItemCount = ({ stock, onAdd }) => {
             theme: "light",
             Transition: Zoom,
         });
-        [contador];
     };
+
     return (
         <>
             <div className="font-sans flex flex-col items-center space-y-4 text-sm font-medium ">
@@ -62,7 +63,6 @@ const ItemCount = ({ stock, onAdd }) => {
                         Agregar
                     </Button>
                     <ToastContainer />
-                    <Button color="warning">Terminar compra</Button>
                 </div>
             </div>
         </>

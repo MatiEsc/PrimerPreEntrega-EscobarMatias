@@ -30,8 +30,17 @@ const Item = ({ producto }) => {
                         {producto.descripcion}
                     </div>
                     <p className="text-sm text-slate-700 mb-4">En Stock.</p>
+
                     <div className="font-sans flex space-x-4 text-sm font-medium">
                         <ItemCount stock={10} />
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <Button className="text-tiny font-sans" color="warning" size="sm">
+                            Ver Detalle
+                        </Button>
+                        <Button className="text-tiny font-sans" color="warning" size="sm">
+                            Terminar compra
+                        </Button>
                     </div>
                 </form>
             </div>
