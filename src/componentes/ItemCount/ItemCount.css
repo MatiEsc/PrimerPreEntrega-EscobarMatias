@@ -1,4 +1,8 @@
-.tamanio {
-    width: 10px !important;
-    height: 20px !important;
+.items-center .boton {
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #f5a524;
+    border-radius: 10px;
 }

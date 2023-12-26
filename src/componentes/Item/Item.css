@@ -1,17 +1,51 @@
-.bg-natural-card {
-    background-color: rgba(230, 230, 230, 0.5); /* Cambia este color al color natural deseado */
+.item {
+    width: 250px;
+    background-color: rgba(230, 230, 230, 0.5);
+    border-radius: 4px;
+    margin: 10px 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 4px 23px 5px rgba(0, 0, 0, 0.18);
+    -webkit-box-shadow: 2px 4px 23px 5px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 2px 4px 23px 5px rgba(0, 0, 0, 0.18);
 }
 
-.rounded-md {
-    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+.item .image {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    transform: scale(1);
+}
+.image-controls {
+    display: flex;
+    justify-content: center;
+    padding-right: 15px;
+}
+.item .image:hover {
+    transform: scale(1.15);
 }
 
-.rounded-md:hover img {
-    transform: scale(1.5); /* Puedes ajustar el valor según tus preferencias */
-    transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+.item .titulo {
+    margin: 5px 0;
+    font-weight: bold;
+    text-align: center;
 }
 
-.tamanio {
-    width: 10px !important;
-    height: 20px !important;
+.item .precio {
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 900;
+    text-align: end;
+    font-weight: bolder;
+}
+
+.item .boton {
+    display: flex;
+    justify-content: center;
+    margin-left: 70px;
+    width: auto;
 }

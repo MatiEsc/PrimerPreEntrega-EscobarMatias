@@ -8,22 +8,17 @@ import {
     NavbarMenuToggle,
     NavbarMenu,
     NavbarMenuItem,
-    Link,
 } from "@nextui-org/react";
 import Logo from "./Logo";
-import { Activity, Flash, Scale } from "./Icons.jsx";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const menuItems = [
-        { name: "Ropa de Bebe", link: "#" },
-        { name: "Ropa de Niñ@s", link: "#" },
-        { name: "Accesorios", link: "#" },
+        { name: "Ropa de Bebe", to: "/categorias/bebes" },
+        { name: "Ropa de Niñ@s", to: "/categorias/ninos" },
+        { name: "Accesorios", to: "/categorias/accesorios" },
+        { name: "Contacto", to: "/contacto" },
     ];
-    const icons = {
-        scale: <Scale className="text-warning" fill="currentColor" size={30} />,
-        activity: <Activity className="text-secondary" fill="currentColor" size={30} />,
-        flash: <Flash className="text-primary" fill="currentColor" size={30} />,
-    };
 
     return (
         <Navbar shouldHideOnScroll>
@@ -33,52 +28,48 @@ const NavBar = () => {
 
             <NavbarContent className="sm:hidden pr-3 " justify="center">
                 <NavbarBrand>
-                    <Logo />
+                    <Link to="/">
+                        <Logo />
+                    </Link>
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4 ">
                 <NavbarBrand>
-                    <Logo />
+                    <Link to="/">
+                        <Logo />
+                    </Link>
                 </NavbarBrand>
 
-                <NavbarItem>
-                    <Link href="#" aria-current="page" color="foreground">
-                        Bebes
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link href="#" aria-current="page" color="foreground">
-                        Niñ@s
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link href="#" aria-current="page" color="foreground">
-                        Accesorios
-                    </Link>
-                </NavbarItem>
-            </NavbarContent>
-
-            <NavbarContent justify="end">
-                <NavbarItem>
-                    <CartWidget />
-                </NavbarItem>
-            </NavbarContent>
-
-            <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            className="w-full"
-                            color={index === 0 ? "warning" : "foreground"}
-                            href="#"
-                            size="lg"
-                        >
+                    <NavbarItem key={`${item}-${index}`}>
+                        <Link to={item.to} aria-current="page" color="foreground">
                             {item.name}
                         </Link>
-                    </NavbarMenuItem>
+                    </NavbarItem>
                 ))}
-            </NavbarMenu>
+
+                <NavbarContent justify="end">
+                    <NavbarItem>
+                        <CartWidget />
+                    </NavbarItem>
+                </NavbarContent>
+
+                <NavbarMenu>
+                    {menuItems.map((item, index) => (
+                        <NavbarMenuItem key={`${item}-${index}`}>
+                            <Link
+                                to={item.to}
+                                className="w-full"
+                                color={index === 0 ? "warning" : "foreground"}
+                                size="lg"
+                            >
+                                {item.name}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
+                </NavbarMenu>
+            </NavbarContent>
         </Navbar>
     );
 };

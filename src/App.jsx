@@ -1,25 +1,33 @@
 import "./App.css";
-import ItemCount from "./componentes/ItemCount/ItemCount";
+
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import NavBar from "./componentes/NavBar/NavBar";
-import React, { useState } from "react";
+import Carrito from "./componentes/Carrito/Carrito";
+import Error from "./componentes/Error/Error";
+import Formulario from "./componentes/Formulario/Formulario";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-    const [carrito, setCarrito] = useState([]);
-    const addToCart = (cantidad) => {
-        console.log(`Añadir al carrito: ${cantidad} unidades`);
-
-        // Crear un nuevo array con el contenido actual del carrito más los nuevos elementos
-        setCarrito([...carrito, { cantidad }]);
-    };
     return (
         <>
-            <div>
+            <BrowserRouter>
                 <NavBar />
-                <ItemListContainer saludo="´Bienvenidos a mi Ecommerce´" />
-                <ItemDetailContainer />
-            </div>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<ItemListContainer saludo="Bienvenidos a Motz-Regaleria" />}
+                    />
+                    <Route
+                        path="/categorias/:categoria"
+                        element={<ItemListContainer saludo="Bienvenidos a Motz-Regaleria" />}
+                    />
+                    <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+                    <Route path="/carrito" element={<Carrito />} />
+                    <Route path="/contacto" element={<Formulario />} />
+                    <Route path="*" element={<Error />} />
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }

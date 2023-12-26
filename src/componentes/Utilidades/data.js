@@ -14,7 +14,7 @@ const productos = [
     },
     {
         id: "v6440",
-        categoria: "niños",
+        categoria: "ninos",
         subCategoria: "vestido",
         nombre: "VESTIDO VUAL",
         descripcion: "Vestido Vual, color rosa",
@@ -29,7 +29,7 @@ const productos = [
         id: "v5850",
         categoria: "bebes",
         subCategoria: "vestido",
-        nombre: "VESTIDO FIBRANA FRUTILLAS",
+        nombre: "VESTIDO FIBRANA ",
         descripcion: "Vestido Fibrana Frutillas, color rosa",
         stock: 10,
         precio: 7900,
@@ -66,7 +66,7 @@ const productos = [
     },
     {
         id: "b5636",
-        categoria: "niños",
+        categoria: "ninos",
         subCategoria: "buzo",
         nombre: "BUZO RUSTICO LANGOSTA",
         descripcion: "Buzo Rustico con langostas en color rojo",
@@ -92,9 +92,9 @@ const productos = [
     },
     {
         id: "s5843",
-        categoria: "niños",
+        categoria: "ninos",
         subCategoria: "short",
-        nombre: "SHORT ALGODON MULTICOLOR",
+        nombre: "SHORT ALGODON ",
         descripcion: "Short de Algodon Multicolor, Ideal Verano",
         stock: 10,
         precio: 1550,
